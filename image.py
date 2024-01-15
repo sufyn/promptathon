@@ -6,7 +6,7 @@ def image(prompt):
 
     API_URL = "https://api-inference.huggingface.co/models/dataautogpt3/OpenDalleV1.1"
     key = st.secrets['auth_token'] 
-    headers = {"Authorization": "Bearer" key }
+    headers = {"Authorization": key }
 
     def query(payload):
         response = requests.post(API_URL, headers=headers, json=payload)
@@ -26,7 +26,7 @@ def accuracy(prompt):
 
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
     key = st.secrets['auth_token'] 
-    headers = {"Authorization": "Bearer" key}
+    headers = {"Authorization": key}
 
     def query(payload):
         response = requests.post(API_URL, headers=headers, json=payload)
