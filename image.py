@@ -126,9 +126,9 @@ with tab3:
         st.write(accuracy3)
         
         st.header('Nice Try!!!')
-        st.write(accuracy1)
-        st.write(accuracy2)
-        st.write(accuracy3)
+        st.write(accuracy1[0])
+        st.write(accuracy2{0})
+        st.write(accuracy3[0])
         faccuracy=(accuracy1+accuracy2+accuracy3)/3
         st.subheader('Final Score:')
         st.write(faccuracy)
