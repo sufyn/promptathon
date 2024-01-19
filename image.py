@@ -57,7 +57,7 @@ st.write('by sufyaan')
 tab1, tab2, tab3 = st.tabs(["Round 1", "Round 2", "Round 3"])
 with tab1:
     # Input URL
-    st.divider()
+    
     st.write('ROUND 1')
     prompt1 = st.text_input("Enter Your Prompt:", value="",key="r1")
     
@@ -74,6 +74,8 @@ with tab1:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy1)
+        if accuracy1 > 0.5111:
+            st.header('Doing Good!!!')
     
     
     st.divider()
@@ -98,7 +100,8 @@ with tab2:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy2)
-    
+        if accuracy2 > 0.7111:
+            st.header('Performing Better!!!')
     
     st.divider()
     st.header("Image to be generated", anchor=False)
@@ -122,11 +125,17 @@ with tab3:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy3)
-    
+        if accuracy1 > 0.90:
+            st.header('The Best!!!')
+        faccuracy=(accuracy1+accuracy2+accuracy3)/3
+        st.subheader('Final Score:')
+        st.write(faccuracy)
     
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
+    
+    
 
 st.divider()
 st.header("Demo with Prompts", anchor=False)
