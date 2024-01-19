@@ -81,7 +81,7 @@ st.image('astro.jpg',width=600)
 
 
 st.write('ROUND 2')
-prompt2 = st.text_input2("Enter Your Prompt:", value="")
+prompt2 = st.text_input("Enter Your Prompt:", value="")
 
 if prompt:
     with st.status("Processing...", state="running", expanded=True) as status:
@@ -104,7 +104,7 @@ st.image('astro.jpg',width=600)
 
 
 st.write('ROUND 3')
-prompt3 = st.text_input3("Enter Your Prompt:", value="")
+prompt3 = st.text_input("Enter Your Prompt:", value="")
 
 if prompt:
     with st.status("Processing...", state="running", expanded=True) as status:
