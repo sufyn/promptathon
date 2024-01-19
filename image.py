@@ -55,6 +55,53 @@ st.write('by sufyaan')
 
 # Input URL
 st.divider()
+st.write('ROUND 1')
+prompt = st.text_input("Enter Your Prompt:", value="")
+
+if prompt:
+    with st.status("Processing...", state="running", expanded=True) as status:
+        st.write("Generating Image ...")
+        img = image(prompt)
+        # Download image
+        st.divider()
+        st.image(img,width=800,caption=prompt)
+        st.write("Checking Your Accuracy...")
+        accuracy = accuracy(prompt)
+        status.update(label="Finished", state="complete")
+    # Show Summary
+    st.subheader("Accuracy:", anchor=False)
+    st.write(accuracy)
+
+
+st.divider()
+st.header("Image to be generated", anchor=False)
+st.image('astro.jpg',width=600)
+
+
+st.write('ROUND 2')
+prompt = st.text_input("Enter Your Prompt:", value="")
+
+if prompt:
+    with st.status("Processing...", state="running", expanded=True) as status:
+        st.write("Generating Image ...")
+        img = image(prompt)
+        # Download image
+        st.divider()
+        st.image(img,width=800,caption=prompt)
+        st.write("Checking Your Accuracy...")
+        accuracy = accuracy(prompt)
+        status.update(label="Finished", state="complete")
+    # Show Summary
+    st.subheader("Accuracy:", anchor=False)
+    st.write(accuracy)
+
+
+st.divider()
+st.header("Image to be generated", anchor=False)
+st.image('astro.jpg',width=600)
+
+
+st.write('ROUND 3')
 prompt = st.text_input("Enter Your Prompt:", value="")
 
 if prompt:
