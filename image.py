@@ -22,7 +22,47 @@ def image(prompt):
     return image
 
 
-def accuracy(prompt):
+def accuracy1(prompt):
+    import requests
+
+    API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
+    key = st.secrets['auth_token'] 
+    headers = {"Authorization": key}
+
+    def query(payload):
+        response = requests.post(API_URL, headers=headers, json=payload)
+        return response.json()
+        
+    output = query({
+        "inputs": {
+            "source_sentence": "A pair of hands holding a VR headset, the user's eyes wide with wonder as they explore a vibrant virtual world filled with fantastical creatures",
+            "sentences": [
+                prompt
+            ]
+        },
+    })
+    return output
+def accuracy2(prompt):
+    import requests
+
+    API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
+    key = st.secrets['auth_token'] 
+    headers = {"Authorization": key}
+
+    def query(payload):
+        response = requests.post(API_URL, headers=headers, json=payload)
+        return response.json()
+        
+    output = query({
+        "inputs": {
+            "source_sentence": "A drone soaring through a dense rainforest, its cameras capturing breathtaking biodiversity while simultaneously monitoring environmental health",
+            "sentences": [
+                prompt
+            ]
+        },
+    })
+    return output
+def accuracy3(prompt):
     import requests
 
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
@@ -91,7 +131,7 @@ with tab1:
             st.divider()
             st.image(img1,width=800,caption=prompt1)
             st.write("Checking Your Accuracy...")
-            accuracy1 = accuracy(prompt1)
+            accuracy1 = accuracy1(prompt1)
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
@@ -102,7 +142,7 @@ with tab1:
     
     st.divider()
     st.header("Image to be generated", anchor=False)
-    st.image('astro.jpg',width=600)
+    st.image('vr.jpg',width=600)
 with tab2:
 
     st.write('ROUND 2')
@@ -116,7 +156,7 @@ with tab2:
             st.divider()
             st.image(img2,width=800,caption=prompt2)
             st.write("Checking Your Accuracy...")
-            accuracy2 = accuracy(prompt2)
+            accuracy2 = accuracy2(prompt2)
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
@@ -126,7 +166,7 @@ with tab2:
 
     st.divider()
     st.header("Image to be generated", anchor=False)
-    st.image('astro.jpg',width=600)
+    st.image('drone.jpg',width=600)
 
 
 with tab3:
@@ -142,7 +182,7 @@ with tab3:
             st.divider()
             st.image(img3,width=800,caption=prompt3)
             st.write("Checking Your Accuracy...")
-            accuracy3 = accuracy(prompt3)
+            accuracy3 = accuracy3(prompt3)
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
@@ -166,13 +206,13 @@ with tab4:
             st.subheader("Accuracy:")
             st.write("Checking Your Accuracy...")
             prompt1 = st.text_input("Enter Your Prompt:", value="",key="r11")
-            a1 = accuracy(prompt1)
+            a1 = accuracy1(prompt1)
             st.write(a1[0])
             prompt2 = st.text_input("Enter Your Prompt:", value="",key="r22")
-            a2 = accuracy(prompt2)
+            a2 = accuracy2(prompt2)
             st.write(a2[0])
             prompt3 = st.text_input("Enter Your Prompt:", value="",key="r33")
-            a3 = accuracy(prompt3)
+            a3 = accuracy3(prompt3)
             st.write(a3[0])
         
             status.update(label="Finished", state="complete")
