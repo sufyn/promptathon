@@ -176,6 +176,7 @@ with tab4:
             st.write(a3[0])
             accuracy = finalaccuracy(prompt1,prompt2,prompt3)
             status.update(label="Finished", state="complete")
+            st.write("Final")
             st.write(accuracy[0])
             st.write(accuracy[1])
             st.write(accuracy[2])
