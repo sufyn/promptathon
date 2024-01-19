@@ -75,7 +75,7 @@ def accuracy3(prompt):
         
     output = query({
         "inputs": {
-            "source_sentence": "Astronaut riding a horse",
+            "source_sentence": "A quantum computer bathed in liquid nitrogen, its intricate circuitry glowing with the potential to unlock the secrets of the universe",
             "sentences": [
                 prompt
             ]
@@ -198,7 +198,7 @@ with tab3:
     
     st.divider()
     st.header("Image to be generated", anchor=False)
-    st.image('astro.jpg',width=600)
+    st.image('quantum.png',width=600)
 
 with tab4:
     with st.status("Processing...", state="running", expanded=True) as status:
