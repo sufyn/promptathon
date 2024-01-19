@@ -72,7 +72,7 @@ with tab1:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy1[0])
+        st.subheader(accuracy1[0])
         
         st.header('Doing Good!!!')
     
@@ -97,7 +97,7 @@ with tab2:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy2[0])
+        st.subheader(accuracy2[0])
     
         st.header('Performing Better!!!')
 
@@ -123,7 +123,7 @@ with tab3:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy3[0])
+        st.subheader(accuracy3[0])
         
         st.header('Nice Try!!!')
         st.write(accuracy1[0])
@@ -131,7 +131,7 @@ with tab3:
         st.write(accuracy3[0])
         faccuracy=(accuracy1[0]+accuracy2[0]+accuracy3[0])/3
         st.subheader('Final Score:')
-        st.write(faccuracy)
+        st.subheader(faccuracy)
     
     st.divider()
     st.header("Image to be generated", anchor=False)
