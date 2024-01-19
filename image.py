@@ -20,17 +20,7 @@ def image(prompt):
     image = Image.open(io.BytesIO(image_bytes))
     if image:
         print('image1')
-    byteImgIO = io.BytesIO(image_bytes)
-    byteImg = Image.open("./directories.png")
-    byteImg.save(byteImgIO, "PNG")
-    byteImgIO.seek(0)
-    byteImg = byteImgIO.read()
     
-    
-    # Non test code
-    dataBytesIO = io.BytesIO(byteImg)
-    image = Image.open(dataBytesIO)
-    print('image 2')
     return image
 
 
