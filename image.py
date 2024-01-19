@@ -85,7 +85,7 @@ with tab2:
     st.write('ROUND 2')
     prompt2 = st.text_input("Enter Your Prompt:", value="",key="r2")
     
-    if prompt:
+    if prompt2:
         with st.status("Processing...", state="running", expanded=True) as status:
             st.write("Generating Image ...")
             img2 = image(prompt2)
@@ -109,7 +109,7 @@ with tab3:
     st.write('ROUND 3')
     prompt3 = st.text_input("Enter Your Prompt:", value="",key="r3")
     
-    if prompt:
+    if prompt3:
         with st.status("Processing...", state="running", expanded=True) as status:
             st.write("Generating Image ...")
             img3 = image(prompt3)
