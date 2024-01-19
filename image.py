@@ -42,6 +42,29 @@ def accuracy(prompt):
         },
     })
     return output
+def finalaccuracy(prompt1,prompt2,prompt3):
+    import requests
+
+    API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
+    key = st.secrets['auth_token'] 
+    headers = {"Authorization": key}
+
+    def query(payload):
+        response = requests.post(API_URL, headers=headers, json=payload)
+        return response.json()
+        
+    output = query({
+        "inputs": {
+            "source_sentence": "Astronaut riding a horse",
+            "sentences": [
+                prompt1,
+                prompt2,
+                prompt3
+                
+            ]
+        },
+    })
+    return output
 
 
 
@@ -53,7 +76,7 @@ st.set_page_config(page_title="IEEE CS PROMPATHON", page_icon="📜", layout="wi
 st.title("IEEE CS PROMPATHON", anchor=False)
 st.header("Compare Your Prompts with AI (OpenDalleV1.1 and all-MiniLM-L6-v2)", anchor=False)
 st.write('by sufyaan')
-tab1, tab2, tab3 = st.tabs(["Round 1", "Round 2", "Round 3"])
+tab1, tab2, tab3, tab4 = st.tabs(["Round 1", "Round 2", "Round 3", "Accuracy"])
 with tab1:
     # Input URL
     
@@ -136,7 +159,19 @@ with tab3:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
+
+with tab4:
+    with st.status("Processing...", state="running", expanded=True) as status:
+            
+            st.subheader("Accuracy:")
+            st.write("Checking Your Accuracy...")
+            prompt1 = st.text_input("Enter Your Prompt:", value="",key="r1")
+            prompt2 = st.text_input("Enter Your Prompt:", value="",key="r2")
+            prompt3 = st.text_input("Enter Your Prompt:", value="",key="r3")
     
+            accuracy = finalaccuracy(prompt1,prompt2,prompt3)
+            status.update(label="Finished", state="complete")
+            st.write(accuracy)
 
 st.divider()
 st.header("Demo with Prompts", anchor=False)
