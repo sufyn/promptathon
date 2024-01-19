@@ -73,7 +73,7 @@ with tab1:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy1)
-        if accuracy1 > 0.5111:
+        if (accuracy1 > 0.51):
             st.header('Doing Good!!!')
     
     
@@ -99,7 +99,7 @@ with tab2:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy2)
-        if accuracy2 > 0.7111:
+        if (accuracy2 > 0.71):
             st.header('Performing Better!!!')
     
     st.divider()
@@ -124,7 +124,7 @@ with tab3:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy3)
-        if accuracy1 > 0.90:
+        if (accuracy1 > 0.90):
             st.header('The Best!!!')
         faccuracy=(accuracy1+accuracy2+accuracy3)/3
         st.subheader('Final Score:')
