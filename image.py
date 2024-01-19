@@ -72,7 +72,7 @@ with tab1:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy1)
+        st.write(accuracy1[0])
         
         st.header('Doing Good!!!')
     
@@ -97,7 +97,7 @@ with tab2:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy2)
+        st.write(accuracy2[0])
     
         st.header('Performing Better!!!')
 
@@ -123,13 +123,13 @@ with tab3:
             status.update(label="Finished", state="complete")
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
-        st.write(accuracy3)
+        st.write(accuracy3[0])
         
         st.header('Nice Try!!!')
         st.write(accuracy1[0])
         st.write(accuracy2[0])
         st.write(accuracy3[0])
-        faccuracy=(accuracy1+accuracy2+accuracy3)/3
+        faccuracy=(accuracy1[0]+accuracy2[0]+accuracy3[0])/3
         st.subheader('Final Score:')
         st.write(faccuracy)
     
