@@ -165,9 +165,9 @@ with tab4:
             
             st.subheader("Accuracy:")
             st.write("Checking Your Accuracy...")
-            prompt1 = st.text_input("Enter Your Prompt:", value="",key="r1")
-            prompt2 = st.text_input("Enter Your Prompt:", value="",key="r2")
-            prompt3 = st.text_input("Enter Your Prompt:", value="",key="r3")
+            prompt1 = st.text_input("Enter Your Prompt:", value="",key="r11")
+            prompt2 = st.text_input("Enter Your Prompt:", value="",key="r22")
+            prompt3 = st.text_input("Enter Your Prompt:", value="",key="r33")
     
             accuracy = finalaccuracy(prompt1,prompt2,prompt3)
             status.update(label="Finished", state="complete")
