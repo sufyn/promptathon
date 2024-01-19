@@ -80,6 +80,7 @@ with tab1:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
+return accuracy1
 
 with tab2:
 
@@ -101,10 +102,11 @@ with tab2:
         st.write(accuracy2)
     
         st.header('Performing Better!!!')
-    
+
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
+return accuracy2
 
 with tab3:
 
@@ -133,7 +135,7 @@ with tab3:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
-    
+return accuracy3    
     
 
 st.divider()
