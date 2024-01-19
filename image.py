@@ -80,8 +80,6 @@ with tab1:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
-return accuracy1
-
 with tab2:
 
     st.write('ROUND 2')
@@ -106,7 +104,7 @@ with tab2:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
-return accuracy2
+
 
 with tab3:
 
@@ -128,6 +126,9 @@ with tab3:
         st.write(accuracy3)
         
         st.header('Nice Try!!!')
+        st.write(accuracy1)
+        st.write(accuracy2)
+        st.write(accuracy3)
         faccuracy=(accuracy1+accuracy2+accuracy3)/3
         st.subheader('Final Score:')
         st.write(faccuracy)
@@ -135,7 +136,6 @@ with tab3:
     st.divider()
     st.header("Image to be generated", anchor=False)
     st.image('astro.jpg',width=600)
-return accuracy3    
     
 
 st.divider()
