@@ -14,13 +14,11 @@ def image(prompt):
     image_bytes = query({
         "inputs": prompt,
     })
+    print(image_bytes)
     # You can access the image with PIL.Image for example
     import io
     from PIL import Image
     image = Image.open(io.BytesIO(image_bytes))
-    if image:
-        print('image1')
-    
     return image
 
 
