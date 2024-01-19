@@ -198,7 +198,7 @@ with tab3:
     
     st.divider()
     st.header("Image to be generated", anchor=False)
-    st.image('quantum.png',width=600)
+    st.image("quantum.png",width=600)
 
 with tab4:
     with st.status("Processing...", state="running", expanded=True) as status:
