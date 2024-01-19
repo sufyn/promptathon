@@ -18,6 +18,8 @@ def image(prompt):
     import io
     from PIL import Image
     image = Image.open(io.BytesIO(image_bytes))
+    if image:
+        print(image)
     return image
 
 
@@ -58,19 +60,19 @@ st.divider()
 st.write('ROUND 1')
 prompt = st.text_input("Enter Your Prompt:", value="")
 
-if prompt:
+if prompt1:
     with st.status("Processing...", state="running", expanded=True) as status:
         st.write("Generating Image ...")
-        img = image(prompt)
+        img1 = image(prompt1)
         # Download image
         st.divider()
-        st.image(img,width=800,caption=prompt)
+        st.image(img1,width=800,caption=prompt1)
         st.write("Checking Your Accuracy...")
-        accuracy = accuracy(prompt)
+        accuracy1 = accuracy(prompt1)
         status.update(label="Finished", state="complete")
     # Show Summary
     st.subheader("Accuracy:", anchor=False)
-    st.write(accuracy)
+    st.write(accuracy1)
 
 
 st.divider()
@@ -79,21 +81,21 @@ st.image('astro.jpg',width=600)
 
 
 st.write('ROUND 2')
-prompt = st.text_input("Enter Your Prompt:", value="")
+prompt2 = st.text_input("Enter Your Prompt:", value="")
 
 if prompt:
     with st.status("Processing...", state="running", expanded=True) as status:
         st.write("Generating Image ...")
-        img = image(prompt)
+        img2 = image(prompt2)
         # Download image
         st.divider()
-        st.image(img,width=800,caption=prompt)
+        st.image(img2,width=800,caption=prompt2)
         st.write("Checking Your Accuracy...")
-        accuracy = accuracy(prompt)
+        accuracy2 = accuracy(prompt2)
         status.update(label="Finished", state="complete")
     # Show Summary
     st.subheader("Accuracy:", anchor=False)
-    st.write(accuracy)
+    st.write(accuracy2)
 
 
 st.divider()
@@ -102,21 +104,21 @@ st.image('astro.jpg',width=600)
 
 
 st.write('ROUND 3')
-prompt = st.text_input("Enter Your Prompt:", value="")
+prompt3 = st.text_input("Enter Your Prompt:", value="")
 
 if prompt:
     with st.status("Processing...", state="running", expanded=True) as status:
         st.write("Generating Image ...")
-        img = image(prompt)
+        img3 = image(prompt3)
         # Download image
         st.divider()
-        st.image(img,width=800,caption=prompt)
+        st.image(img3,width=800,caption=prompt3)
         st.write("Checking Your Accuracy...")
-        accuracy = accuracy(prompt)
+        accuracy3 = accuracy(prompt3)
         status.update(label="Finished", state="complete")
     # Show Summary
     st.subheader("Accuracy:", anchor=False)
-    st.write(accuracy)
+    st.write(accuracy3)
 
 
 st.divider()
