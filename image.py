@@ -58,7 +58,7 @@ st.write('by sufyaan')
 # Input URL
 st.divider()
 st.write('ROUND 1')
-prompt = st.text_input("Enter Your Prompt:", value="")
+prompt1 = st.text_input("Enter Your Prompt:", value="")
 
 if prompt1:
     with st.status("Processing...", state="running", expanded=True) as status:
