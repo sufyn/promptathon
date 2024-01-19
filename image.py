@@ -73,8 +73,8 @@ with tab1:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy1)
-        if (accuracy1 > 0.51):
-            st.header('Doing Good!!!')
+        
+        st.header('Doing Good!!!')
     
     
     st.divider()
@@ -99,8 +99,8 @@ with tab2:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy2)
-        if (accuracy2 > 0.71):
-            st.header('Performing Better!!!')
+    
+        st.header('Performing Better!!!')
     
     st.divider()
     st.header("Image to be generated", anchor=False)
@@ -124,8 +124,8 @@ with tab3:
         # Show Summary
         st.subheader("Accuracy:", anchor=False)
         st.write(accuracy3)
-        if (accuracy1 > 0.90):
-            st.header('The Best!!!')
+        
+        st.header('Nice Try!!!')
         faccuracy=(accuracy1+accuracy2+accuracy3)/3
         st.subheader('Final Score:')
         st.write(faccuracy)
