@@ -22,7 +22,7 @@ def image(prompt):
     return image
 
 
-def accuracy1(prompt):
+def accuracy1(prompt1):
     import requests
 
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
@@ -42,7 +42,7 @@ def accuracy1(prompt):
         },
     })
     return output
-def accuracy2(prompt):
+def accuracy2(prompt2):
     import requests
 
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
@@ -62,7 +62,7 @@ def accuracy2(prompt):
         },
     })
     return output
-def accuracy3(prompt):
+def accuracy3(prompt3):
     import requests
 
     API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
